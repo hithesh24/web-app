@@ -204,6 +204,8 @@ async function main() {
   });
 }
 
-main().catch(err => console.error('Failed to start server:', err));
+if (process.env.NODE_ENV !== 'test') {
+  main().catch(err => console.error('Failed to start server:', err));
+}
 
 export { app };
